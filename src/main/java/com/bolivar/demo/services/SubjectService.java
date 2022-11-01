@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bolivar.demo.models.Student;
 import com.bolivar.demo.models.Subject;
-import com.bolivar.demo.repositories.IStudentRepository;
 import com.bolivar.demo.repositories.ISubjectRepository;
 
 @Service
