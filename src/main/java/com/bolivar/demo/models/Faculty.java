@@ -23,6 +23,7 @@ public class Faculty implements Serializable{
 			name = "faculty_seq",
 			sequenceName = "faculty_seq_name",
 			allocationSize = 1
+			
 			) 
 	@GeneratedValue(
 			strategy = GenerationType.SEQUENCE,
