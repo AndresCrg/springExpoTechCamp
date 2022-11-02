@@ -27,8 +27,8 @@ public class SubjectController {
 	private SubjectService subjectService;
 	
 
-//	public StudentController(StudentService studentbService) {
-//		this.studentbService = studentbService;
+//	public SubjectController(SubjectService subjectService) {
+//		this.subjectService = subjectService;
 //	}
 	
 	@GetMapping()
@@ -37,7 +37,7 @@ public class SubjectController {
 	}
 	
 	@PostMapping()
-	public void saveStudent(@RequestBody Subject subject) {
+	public void saveSubject(@RequestBody Subject subject) {
 		subjectService.saveSubject(subject);
 	}
 	
@@ -48,7 +48,7 @@ public class SubjectController {
 	    	Subject oldSubject = subjectService.updateSubject(id, subject);
 			resp.put("status", 200);
 			resp.put("msg", "Subject updated sucessfully!");
-			resp.put("student", oldSubject);
+			resp.put("subject", oldSubject);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

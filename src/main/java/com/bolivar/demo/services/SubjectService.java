@@ -15,8 +15,8 @@ public class SubjectService {
 	private ISubjectRepository iSubjectRepository;
 	
 
-	//	public StudentService(IStudentRepository iStudentRepository) {
-	//		this.iStudentRepository = iStudentRepository;
+	//	public SubjectService(ISubjectRepository iSubjectRepository) {
+	//		this.iSubjectRepository = iSubjectRepository;
 	//	}
 
 	public List<Subject> getAllSubjects() {
