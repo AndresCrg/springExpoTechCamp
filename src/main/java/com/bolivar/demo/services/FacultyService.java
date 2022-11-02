@@ -26,10 +26,7 @@ public class FacultyService {
 	public Faculty updateFaculty(Long id, Faculty faculty) {
 		Faculty oldFaculty = iFacultyRepository.findById(id).orElseThrow();
 		oldFaculty.setName(faculty.getName());
-		
-		
 		return iFacultyRepository.save(oldFaculty);
-		 
 	}
 	
 	public void deleteFaculty(Long id) {

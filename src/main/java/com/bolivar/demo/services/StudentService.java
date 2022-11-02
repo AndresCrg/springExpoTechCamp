@@ -23,6 +23,14 @@ public class StudentService {
 	public List<Student> getAllStudents() {
 		return iStudentRepository.findAll();
 	}
+	
+	public List<Object[]> findStudentBySubject(String subject){
+		return iStudentRepository.findStudentBySubject(subject);
+	}
+	
+//	public Student findStudentBySubject(String subject){
+//		return iStudentRepository.findStudentBySubject(subject);
+//	}
 
 	public Student saveStudent(Student student) {
 		return iStudentRepository.save(student);

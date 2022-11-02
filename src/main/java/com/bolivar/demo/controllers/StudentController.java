@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -37,6 +36,18 @@ public class StudentController {
 	public List<Student> getAllStudents() {
 		return studentService.getAllStudents();
 	}
+	
+	@GetMapping(path = "/{subject}")
+	public List<Object[]> findStudentBySubject(@PathVariable String subject){
+		System.out.println("La variable es: " + subject);
+		return studentService.findStudentBySubject(subject);
+	}
+	
+//	@GetMapping(path = "/{subject}")
+//	public Student findStudentBySubject(@PathVariable String subject){
+//		System.out.println("La variable es: " + subject);
+//		return studentService.findStudentBySubject(subject);
+//	}
 	
 	@PostMapping()
 	public ResponseEntity<String> saveStudent(@RequestBody Student student) {

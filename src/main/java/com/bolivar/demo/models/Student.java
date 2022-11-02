@@ -7,7 +7,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "students")
+@Table(name = "students", schema = "C##STUDENTS")
 public class Student implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -16,7 +16,7 @@ public class Student implements Serializable{
 			name = "student_seq",
 			sequenceName = "student_seq_name",
 			allocationSize = 1
-			) 
+			)
 	@GeneratedValue(
 			strategy = GenerationType.SEQUENCE,
 			generator = "student_seq_name")
@@ -42,6 +42,14 @@ public class Student implements Serializable{
 		this.dob = dob;
 		this.age = age;
 		this.stuSubjects = stuSubjects;
+	}
+
+	public Student(Long id, String name, String email, LocalDate dob, Integer age) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.dob = dob;
+		this.age = age;
 	}
 
 	public Long getId() {
