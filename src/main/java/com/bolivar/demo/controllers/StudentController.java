@@ -39,8 +39,18 @@ public class StudentController {
 	}
 	
 	@PostMapping()
-	public void saveStudent(@RequestBody Student student) {
-		studentService.saveStudent(student);
+	public ResponseEntity<String> saveStudent(@RequestBody Student student) {
+
+		JSONObject resp = new JSONObject();
+	    try { 
+	    	Student newStudent = studentService.saveStudent(student);
+			resp.put("status", 200);
+			resp.put("msg", "Student created sucessfully!");
+			resp.put("student", newStudent);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<String>(resp.toString(), HttpStatus.CREATED);
 	}
 	
 	@PutMapping(path = "/{id}")
